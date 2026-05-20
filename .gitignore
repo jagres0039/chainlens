@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual envs
+venv/
+env/
+.venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ChainLens runtime
+data/cache/
+data/*.db
+data/*.sqlite
+*.log
+logs/
+
+# Secrets
+.env
+.env.local
+*.pem
+*.key
+credentials/
+
+# Build
+dist/
+build/
+*.egg

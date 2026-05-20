@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChainLens — AI × On-Chain Analysis</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="brand">
+        <span class="logo">⛓️</span>
+        <span class="brand-name">ChainLens</span>
+      </div>
+      <h1>AI × On-Chain Analysis</h1>
+      <p class="tag">Explain wallets, flag mint risk, and turn noisy chain data into decisions.</p>
+      <p class="sub">ChainLens reads wallet activity, contract signals, and mint-site patterns, then returns a concise risk brief — so you understand what you're signing, buying, or bridging before you click.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="scan-card">
+      <h2>Analyze</h2>
+      <form id="scanForm">
+        <div class="row">
+          <input type="text" id="address" placeholder="Paste wallet, contract, or mint URL — 0x..." required>
+          <select id="chain">
+            <option value="ethereum">Ethereum</option>
+            <option value="base">Base</option>
+            <option value="arbitrum">Arbitrum</option>
+            <option value="optimism">Optimism</option>
+            <option value="bsc">BSC</option>
+            <option value="polygon">Polygon</option>
+          </select>
+          <button type="submit" id="scanBtn">Analyze</button>
+        </div>
+        <div class="example">
+          Try: <code class="example-input">0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB</code> (Ethereum CryptoPunks)
+        </div>
+      </form>
+    </section>
+
+    <section id="result" class="hidden">
+      <div class="result-header">
+        <span id="verdictBadge" class="badge">—</span>
+        <span id="latencyTag" class="latency">—</span>
+        <button id="exportBtn" class="export">Export report</button>
+      </div>
+      <div class="summary">
+        <h3>Summary</h3>
+        <p id="summaryText">—</p>
+      </div>
+      <div class="signals">
+        <h3>Risk signals <span id="signalCount" class="muted"></span></h3>
+        <ul id="signalList"></ul>
+      </div>
+      <details class="meta">
+        <summary>Raw metadata</summary>
+        <pre id="metaJson"></pre>
+      </details>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3>Wallet activity explainer</h3>
+        <p>Paste an address and get a readable breakdown of claims, swaps, bridges, mints, and suspicious approvals.</p>
+      </div>
+      <div class="feature">
+        <h3>NFT mint risk scanner</h3>
+        <p>Parse contract fields, identify owner powers, and summarize whether a mint looks safe, weird, or worth avoiding.</p>
+      </div>
+      <div class="feature">
+        <h3>Builder-facing API demo</h3>
+        <p>A clean public demo that justifies API access with a real product shape and clear utility.</p>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <span class="stat-num">3s</span>
+        <span class="stat-label">summary latency target</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">5+</span>
+        <span class="stat-label">risk signals per contract</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">plain-English explanation</span>
+      </div>
+    </section>
+
+    <section class="how">
+      <h2>How it works</h2>
+      <ol>
+        <li><b>Input</b> — User pastes wallet, mint URL, or contract address.</li>
+        <li><b>Inspect</b> — The app pulls on-chain metadata and contract signals.</li>
+        <li><b>Explain</b> — LLM converts it into a short, actionable risk summary.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <span>ChainLens v0.1 · MIT · NFA · DYOR</span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
